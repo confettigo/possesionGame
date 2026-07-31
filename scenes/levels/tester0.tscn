@@ -3,10 +3,11 @@
 [ext_resource type="PackedScene" uid="uid://sytj0e6gkykf" path="res://scenes/entities/playerV0.tscn" id="1_r8dy1"]
 [ext_resource type="Texture2D" uid="uid://cc5pdri86c6a1" path="res://assets/memow.png" id="2_ecvu0"]
 [ext_resource type="PackedScene" uid="uid://dogccnmpqlqkv" path="res://scenes/entities/exit.tscn" id="3_8s0w0"]
+[ext_resource type="PackedScene" uid="uid://bbhgyr7irmxix" path="res://scenes/entities/enemyV0.tscn" id="4_ydyhc"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_y32ns"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lgnbw"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bsp88"]
 texture = ExtResource("2_ecvu0")
 texture_region_size = Vector2i(202, 215)
 0:0/0 = 0
@@ -170,7 +171,7 @@ texture_region_size = Vector2i(202, 215)
 [sub_resource type="TileSet" id="TileSet_ai6x4"]
 tile_size = Vector2i(100, 100)
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_lgnbw")
+sources/0 = SubResource("TileSetAtlasSource_bsp88")
 
 [node name="testerLevelV0" type="Node2D" unique_id=731537907]
 
@@ -193,3 +194,7 @@ tile_set = SubResource("TileSet_ai6x4")
 [node name="exit" parent="." unique_id=1659831440 instance=ExtResource("3_8s0w0")]
 position = Vector2(449, -88)
 scale = Vector2(5.11, 5.11)
+
+[node name="CharacterBody2D2" parent="." unique_id=1116833427 instance=ExtResource("4_ydyhc")]
+position = Vector2(397, 121.00001)
+scale = Vector2(6.005, 6.005)
