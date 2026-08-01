@@ -43,6 +43,14 @@ offset_bottom = 246.0
 theme_override_font_sizes/font_size = 75
 text = "Level 2"
 
+[node name="lvl3" type="Button" parent="." unique_id=1831462729]
+offset_left = 80.0
+offset_top = 130.0
+offset_right = 338.0
+offset_bottom = 248.0
+theme_override_font_sizes/font_size = 75
+text = "Level 3"
+
 [node name="Label2" type="Label" parent="." unique_id=829089610]
 offset_left = -1266.0
 offset_top = 374.0
@@ -59,3 +67,4 @@ text = "Todo
 
 [connection signal="button_up" from="lvl1" to="." method="_on_lvl_1_button_up"]
 [connection signal="button_up" from="lvl2" to="." method="_on_lvl_2_button_up"]
+[connection signal="button_up" from="lvl3" to="." method="_on_lvl_3_button_up"]

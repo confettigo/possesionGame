@@ -7,4 +7,6 @@ func _on_lvl_1_button_up() -> void:
 
 func _on_lvl_2_button_up() -> void:
 	Global.switchScene("res://scenes/levels/tester_1.tscn")
-	pass # Replace with function body.
+	
+func _on_lvl_3_button_up() -> void:
+	Global.switchScene("res://scenes/levels/tester_2.tscn")
