@@ -1,18 +1,14 @@
 extends CharacterBody2D
 #if we have time, i'd still like to implement the more floaty movement when you're the ghost... - lucie
 @export var topspeed: float
-
-<<<<<<< HEAD
 @onready var animatedSprite: AnimatedSprite2D = $AnimatedSprite2D
-=======
-var animatedSprite
+
 var currentAnimation
->>>>>>> 5ff4cc8c8963a202484903ac8e144d136cd4a2fa
 
 
 func _physics_process(delta: float) -> void:
 	
-	if Input.is_action_just_pressed("possess"):
+	if Input.is_action_just_pressed("in_space"):
 		currentAnimation = animatedSprite.get_animation()
 		if currentAnimation == "upFloat":
 			animatedSprite.play("upAttack")

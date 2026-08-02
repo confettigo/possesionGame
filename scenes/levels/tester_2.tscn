@@ -129,3 +129,6 @@ position = Vector2(565, 391)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1097386605]
 position = Vector2(576, 328)
+
+[node name="CharacterBody2D" parent="." unique_id=2056990030 instance=ExtResource("4_4lf4l")]
+position = Vector2(758, 353)
