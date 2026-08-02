@@ -60,7 +60,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_v8xtb")
 }],
-"loop": 1,
+"loop": 2,
 "name": &"downAttack",
 "speed": 5.0
 }, {
@@ -79,7 +79,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_cq5n2")
 }],
-"loop": 1,
+"loop": 2,
 "name": &"leftAttack",
 "speed": 5.0
 }, {
@@ -98,7 +98,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_nvkgo")
 }],
-"loop": 1,
+"loop": 2,
 "name": &"rightAttack",
 "speed": 5.0
 }, {
@@ -117,7 +117,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_yq37y")
 }],
-"loop": 1,
+"loop": 2,
 "name": &"upAttack",
 "speed": 5.0
 }, {
@@ -143,5 +143,5 @@ shape = SubResource("CircleShape2D_x7ukh")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1840440142]
 sprite_frames = SubResource("SpriteFrames_8o4vd")
-animation = &"leftAttack"
+animation = &"upAttack"
 autoplay = "rightFloat"
