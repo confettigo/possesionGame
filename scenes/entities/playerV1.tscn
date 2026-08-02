@@ -100,6 +100,7 @@ animations = [{
 [node name="player" type="CharacterBody2D" unique_id=796300663]
 collision_layer = 3
 script = ExtResource("1_dbk6a")
+topspeed = 300.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=465582045]
 shape = SubResource("CircleShape2D_x7ukh")

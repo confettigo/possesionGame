@@ -2,8 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://d1k7t4n1iav2i" path="res://assets/tileset.png" id="1_1ub57"]
 [ext_resource type="PackedScene" uid="uid://dogccnmpqlqkv" path="res://scenes/entities/exit.tscn" id="2_xg0j2"]
-[ext_resource type="PackedScene" uid="uid://sytj0e6gkykf" path="res://scenes/entities/playerV0.tscn" id="3_4lf4l"]
-[ext_resource type="PackedScene" uid="uid://bbhgyr7irmxix" path="res://scenes/entities/enemyV0.tscn" id="4_4lf4l"]
+[ext_resource type="PackedScene" uid="uid://sytj0e6gkykf" path="res://scenes/entities/playerV1.tscn" id="3_4lf4l"]
+[ext_resource type="PackedScene" uid="uid://bbhgyr7irmxix" path="res://scenes/entities/enemyV1.tscn" id="4_4lf4l"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ruisf"]
 texture = ExtResource("1_1ub57")
@@ -126,11 +126,9 @@ position = Vector2(231, 367)
 
 [node name="enemy1" parent="." unique_id=1116833427 instance=ExtResource("4_4lf4l")]
 position = Vector2(616, 424)
-scale = Vector2(3, 3)
 
 [node name="enemy2" parent="." unique_id=2094504106 instance=ExtResource("4_4lf4l")]
 position = Vector2(592, 284)
-scale = Vector2(3, 3)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1097386605]
 position = Vector2(576, 328)

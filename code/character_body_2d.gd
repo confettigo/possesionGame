@@ -1,8 +1,6 @@
 extends CharacterBody2D
-
-const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
-#do we need jump velocity? - lucie
+#if we have time, i'd still like to implement the more floaty movement when you're the ghost... - lucie
+@export var topspeed: float
 
 var animatedSprite
 
@@ -14,27 +12,23 @@ func _ready():
 
 func _physics_process(delta: float) -> void:
 
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction = Input.get_axis("in_left", "in_right")
 	if direction:
-		velocity.x = direction * SPEED
+		velocity.x = direction * topspeed
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+		velocity.x = move_toward(velocity.x, 0, topspeed)
 		
 	
 	var directionVert = Input.get_axis("in_up", "in_down")
 	if directionVert:
-		velocity.y = directionVert * SPEED
+		velocity.y = directionVert * topspeed
 	else:
-		velocity.y = move_toward(velocity.y, 0, SPEED)
+		velocity.y = move_toward(velocity.y, 0, topspeed)
 	
 	
 	#animation code
 	if velocity.x == velocity.y && velocity.y == 0:
-		animatedSprite.play("idle")
-		#this should probably be changed so it plays a different idle animation depending on the direction the player was last moving in...
-		#also it's SUPER inefficiently written code but. it's 2:07 am.... - lucie
+		animatedSprite.pause()
 	elif velocity.x < 0:
 		animatedSprite.play("leftFloat")
 	elif velocity.x > 0:

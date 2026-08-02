@@ -1,9 +1,9 @@
 [gd_scene format=4 uid="uid://cjm4bhjk5uia0"]
 
-[ext_resource type="PackedScene" uid="uid://sytj0e6gkykf" path="res://scenes/entities/playerV0.tscn" id="1_r8dy1"]
+[ext_resource type="PackedScene" uid="uid://sytj0e6gkykf" path="res://scenes/entities/playerV1.tscn" id="1_r8dy1"]
 [ext_resource type="Texture2D" uid="uid://cc5pdri86c6a1" path="res://assets/memow.png" id="2_ecvu0"]
 [ext_resource type="PackedScene" uid="uid://dogccnmpqlqkv" path="res://scenes/entities/exit.tscn" id="3_8s0w0"]
-[ext_resource type="PackedScene" uid="uid://bbhgyr7irmxix" path="res://scenes/entities/enemyV0.tscn" id="4_ydyhc"]
+[ext_resource type="PackedScene" uid="uid://bbhgyr7irmxix" path="res://scenes/entities/enemyV1.tscn" id="4_ydyhc"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_y32ns"]
 
