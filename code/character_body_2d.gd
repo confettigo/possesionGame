@@ -2,13 +2,8 @@ extends CharacterBody2D
 #if we have time, i'd still like to implement the more floaty movement when you're the ghost... - lucie
 @export var topspeed: float
 
-var animatedSprite
+@onready var animatedSprite: AnimatedSprite2D = $AnimatedSprite2D
 
-func _ready():
-	#this bit imports the animatedSprite2D that's a child of player so we can control it's animations in the player body
-	#idk if we care about best practices rn but if you think it should be handled via a script on the sprite itself instead of this script using signals or whatever
-	#i could redo it :D - lucie
-	animatedSprite = get_node("AnimatedSprite2D")
 
 func _physics_process(delta: float) -> void:
 

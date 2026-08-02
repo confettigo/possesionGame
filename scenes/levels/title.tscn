@@ -9,8 +9,8 @@ script = ExtResource("1_md7fg")
 
 [node name="bg" type="Sprite2D" parent="." unique_id=1610924750]
 modulate = Color(0.072919466, 0.02131916, 0.106420495, 1)
-position = Vector2(2.0000458, 4.0000076)
-scale = Vector2(1170, 654)
+position = Vector2(2.999999, 2.5000763)
+scale = Vector2(1230.0001, 719)
 texture = SubResource("CanvasTexture_g8wwx")
 
 [node name="Label" type="Label" parent="." unique_id=1199272266]
@@ -26,6 +26,7 @@ text = "-Possession Game
 "
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1581296057]
+zoom = Vector2(0.965, 0.965)
 
 [node name="lvl1" type="Button" parent="." unique_id=1725921110]
 offset_left = -521.0
