@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://ci8k5o8vjcjha" path="res://code/enemy_v_0.gd" id="1_lk8wk"]
 [ext_resource type="Texture2D" uid="uid://bthc0tjtve8o8" path="res://assets/enemy-Sheet.png" id="2_7aq7p"]
 [ext_resource type="Texture2D" uid="uid://ksqu87tj3fpb" path="res://assets/effects-Sheet.png" id="2_vkflb"]
+[ext_resource type="Texture2D" uid="uid://dqxqb3kaiwevy" path="res://assets/flashlight.png" id="4_5o8cu"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_22x61"]
 atlas = ExtResource("2_vkflb")
@@ -184,8 +185,6 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4lf4l"]
 size = Vector2(27, 45)
 
-[sub_resource type="CanvasTexture" id="CanvasTexture_lk8wk"]
-
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=1116833427]
 script = ExtResource("1_lk8wk")
 
@@ -206,15 +205,15 @@ shape = SubResource("RectangleShape2D_4lf4l")
 collision_layer = 0
 collision_mask = 2
 
+[node name="PointLight2D" type="PointLight2D" parent="playerSensor" unique_id=348480072]
+position = Vector2(-60.5, -4.0000005)
+scale = Vector2(0.7395833, 1.625)
+texture = ExtResource("4_5o8cu")
+
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="playerSensor" unique_id=2141512905]
 position = Vector2(-32.140743, 0.700006)
 scale = Vector2(2.3572047, 1.5845587)
 polygon = PackedVector2Array(0, 0, -27.03961, -27.767984, -27.03961, 22.088167)
-
-[node name="senseArea" type="Sprite2D" parent="playerSensor" unique_id=679952337]
-position = Vector2(-59.87863, -2.2999945)
-scale = Vector2(72, 56.000004)
-texture = SubResource("CanvasTexture_lk8wk")
 
 [node name="timer" type="Timer" parent="." unique_id=560915166]
 
