@@ -3,6 +3,7 @@ extends CharacterBody2D
 @export var topspeed: float
 
 var animatedSprite
+var currentAnimation
 
 func _ready():
 	#this bit imports the animatedSprite2D that's a child of player so we can control it's animations in the player body
@@ -11,7 +12,27 @@ func _ready():
 	animatedSprite = get_node("AnimatedSprite2D")
 
 func _physics_process(delta: float) -> void:
-
+	
+	if Input.is_action_just_pressed("possess"):
+		currentAnimation = animatedSprite.get_animation()
+		if currentAnimation == "upFloat":
+			animatedSprite.play("upAttack")
+			await get_tree().create_timer(0.5).timeout
+			animatedSprite.play("upFloat")
+		elif currentAnimation == "downFloat":
+			animatedSprite.play("downAttack")
+			await get_tree().create_timer(0.5).timeout
+			animatedSprite.play("downFloat")
+		elif currentAnimation == "leftFloat":
+			animatedSprite.play("leftAttack")
+			await get_tree().create_timer(0.5).timeout
+			animatedSprite.play("leftFloat")
+		elif currentAnimation == "rightFloat":
+			animatedSprite.play("rightAttack")
+			await get_tree().create_timer(0.5).timeout
+			animatedSprite.play("rightFloat")
+		
+	
 	var direction = Input.get_axis("in_left", "in_right")
 	if direction:
 		velocity.x = direction * topspeed
