@@ -1,9 +1,10 @@
 [gd_scene format=3 uid="uid://dogccnmpqlqkv"]
 
 [ext_resource type="Script" uid="uid://bhlds2q87va2x" path="res://code/exit.gd" id="1_ifrtp"]
-[ext_resource type="Texture2D" uid="uid://gldbxqipb7lp" path="res://assets/Screenshot 2023-06-23 155140.png" id="1_ubnvb"]
+[ext_resource type="Texture2D" uid="uid://bcth2wl0ydsht" path="res://assets/exit.png" id="2_ifrtp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ifrtp"]
+size = Vector2(48, 48)
 
 [node name="exit" type="Area2D" unique_id=1659831440]
 collision_layer = 0
@@ -12,8 +13,7 @@ script = ExtResource("1_ifrtp")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1272444188]
 position = Vector2(1.1920929e-07, 0)
-scale = Vector2(0.2702703, 0.18518521)
-texture = ExtResource("1_ubnvb")
+texture = ExtResource("2_ifrtp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1890522250]
 shape = SubResource("RectangleShape2D_ifrtp")
