@@ -6,6 +6,10 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_x7ukh"]
 radius = 22.022715
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_v8xtb"]
+atlas = ExtResource("2_2qxrl")
+region = Rect2(255, 0, 48, 48)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_2qxrl"]
 atlas = ExtResource("2_2qxrl")
 region = Rect2(153, 0, 48, 48)
@@ -14,9 +18,9 @@ region = Rect2(153, 0, 48, 48)
 atlas = ExtResource("2_2qxrl")
 region = Rect2(204, 0, 48, 48)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_5r1dn"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_cq5n2"]
 atlas = ExtResource("2_2qxrl")
-region = Rect2(0, 0, 48, 48)
+region = Rect2(408, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3ga8s"]
 atlas = ExtResource("2_2qxrl")
@@ -26,6 +30,10 @@ region = Rect2(306, 0, 48, 48)
 atlas = ExtResource("2_2qxrl")
 region = Rect2(357, 0, 48, 48)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_nvkgo"]
+atlas = ExtResource("2_2qxrl")
+region = Rect2(102, 0, 48, 48)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_g1bij"]
 atlas = ExtResource("2_2qxrl")
 region = Rect2(0, 0, 48, 48)
@@ -33,6 +41,10 @@ region = Rect2(0, 0, 48, 48)
 [sub_resource type="AtlasTexture" id="AtlasTexture_e84g3"]
 atlas = ExtResource("2_2qxrl")
 region = Rect2(51, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yq37y"]
+atlas = ExtResource("2_2qxrl")
+region = Rect2(561, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ahxiv"]
 atlas = ExtResource("2_2qxrl")
@@ -46,6 +58,14 @@ region = Rect2(510, 0, 48, 48)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_v8xtb")
+}],
+"loop": 1,
+"name": &"downAttack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_2qxrl")
 }, {
 "duration": 1.0,
@@ -57,11 +77,11 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_5r1dn")
+"texture": SubResource("AtlasTexture_cq5n2")
 }],
 "loop": 1,
-"name": &"idle",
-"speed": 3.0
+"name": &"leftAttack",
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -76,6 +96,14 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_nvkgo")
+}],
+"loop": 1,
+"name": &"rightAttack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_g1bij")
 }, {
 "duration": 1.0,
@@ -84,6 +112,14 @@ animations = [{
 "loop": 1,
 "name": &"rightFloat",
 "speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yq37y")
+}],
+"loop": 1,
+"name": &"upAttack",
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -107,5 +143,5 @@ shape = SubResource("CircleShape2D_x7ukh")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1840440142]
 sprite_frames = SubResource("SpriteFrames_8o4vd")
-animation = &"idle"
-autoplay = "idle"
+animation = &"leftAttack"
+autoplay = "rightFloat"
