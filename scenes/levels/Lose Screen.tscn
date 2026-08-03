@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://d1k7t4n1iav2i" path="res://assets/tileset.png" id="1_kwrh7"]
 [ext_resource type="Script" uid="uid://ruk1xhb3onpu" path="res://code/lostButtonMenu.gd" id="2_vae76"]
+[ext_resource type="FontFile" uid="uid://bfvj87aw8qtt" path="res://fonts/FetteNationalFraktur.ttf" id="2_x3kv1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x3kv1"]
 texture = ExtResource("1_kwrh7")
@@ -110,6 +111,9 @@ tile_size = Vector2i(48, 48)
 physics_layer_0/collision_layer = 1
 sources/2 = SubResource("TileSetAtlasSource_x3kv1")
 
+[sub_resource type="Theme" id="Theme_r3hnr"]
+default_font = ExtResource("2_x3kv1")
+
 [node name="Node2D" type="Node2D" unique_id=19383347]
 
 [node name="TileMapLayer2" type="TileMapLayer" parent="." unique_id=623714356]
@@ -121,6 +125,7 @@ offset_left = 138.0
 offset_top = 94.0
 offset_right = 998.0
 offset_bottom = 484.0
+theme = SubResource("Theme_r3hnr")
 theme_override_font_sizes/font_size = 99
 text = "You Lost! Sorry!"
 
@@ -129,6 +134,7 @@ offset_left = 180.0
 offset_top = 298.0
 offset_right = 345.0
 offset_bottom = 432.0
+theme = SubResource("Theme_r3hnr")
 theme_override_font_sizes/font_size = 53
 text = "Menu"
 script = ExtResource("2_vae76")
