@@ -171,3 +171,7 @@ func _on_timer_timeout() -> void:
 	#print("I timed out!")
 	direction = randi_range(0,4);
 	velocity=Vector2(0,0)
+	
+func setAlert(V: Vector2):
+	runTo = V
+	currentState=states.ALERT

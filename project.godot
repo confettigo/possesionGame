@@ -87,6 +87,8 @@ shove={
 
 2d_physics/layer_1="playerCollision"
 2d_physics/layer_2="exitCollision"
+2d_physics/layer_3="playerInteract"
+2d_physics/layer_4="Alert"
 
 [physics]
 

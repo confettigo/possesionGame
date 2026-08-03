@@ -186,6 +186,7 @@ animations = [{
 size = Vector2(27, 45)
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=1116833427]
+collision_layer = 9
 script = ExtResource("1_lk8wk")
 
 [node name="enReaction" type="AnimatedSprite2D" parent="." unique_id=213479092]

@@ -4,8 +4,9 @@
 [ext_resource type="PackedScene" uid="uid://dogccnmpqlqkv" path="res://scenes/entities/exit.tscn" id="2_xg0j2"]
 [ext_resource type="PackedScene" uid="uid://sytj0e6gkykf" path="res://scenes/entities/playerV1.tscn" id="3_4lf4l"]
 [ext_resource type="PackedScene" uid="uid://bbhgyr7irmxix" path="res://scenes/entities/enemyV1.tscn" id="4_4lf4l"]
+[ext_resource type="PackedScene" uid="uid://kfwgxbt7vsqi" path="res://scenes/entities/distraction.tscn" id="5_2ntrm"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ruisf"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2ef3y"]
 texture = ExtResource("1_1ub57")
 texture_region_size = Vector2i(48, 48)
 0:0/0 = 0
@@ -110,7 +111,7 @@ texture_region_size = Vector2i(48, 48)
 [sub_resource type="TileSet" id="TileSet_8o4vd"]
 tile_size = Vector2i(48, 48)
 physics_layer_0/collision_layer = 1
-sources/2 = SubResource("TileSetAtlasSource_ruisf")
+sources/2 = SubResource("TileSetAtlasSource_2ef3y")
 
 [node name="Node2D" type="Node2D" unique_id=717487148]
 
@@ -125,10 +126,14 @@ position = Vector2(945, 321)
 position = Vector2(231, 367)
 
 [node name="enemy1" parent="." unique_id=1116833427 instance=ExtResource("4_4lf4l")]
-position = Vector2(565, 391)
+position = Vector2(302, 550)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1097386605]
 position = Vector2(576, 328)
 
 [node name="CharacterBody2D" parent="." unique_id=2056990030 instance=ExtResource("4_4lf4l")]
 position = Vector2(758, 353)
+
+[node name="distraction" parent="." unique_id=278985913 instance=ExtResource("5_2ntrm")]
+position = Vector2(246, 478)
+scale = Vector2(3, 3)

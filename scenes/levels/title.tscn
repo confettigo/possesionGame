@@ -58,12 +58,8 @@ offset_top = 374.0
 offset_right = 3169.0
 offset_bottom = 1421.0
 theme_override_font_sizes/font_size = 107
-text = "Todo
--Enemy AI (Idle, searching)
--Flashlights?
+text = "
 -Possession  mechanic
--playerHP? For game loss
-
 -Interactable parts? Knock stuff over to distract enemies to sneak up and posses them"
 
 [connection signal="button_up" from="lvl1" to="." method="_on_lvl_1_button_up"]

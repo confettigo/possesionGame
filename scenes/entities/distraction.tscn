@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://kfwgxbt7vsqi"]
+
+[ext_resource type="Script" uid="uid://bmdjahqlyc0en" path="res://code/distraction.gd" id="1_oe5wf"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_y76yr"]
+radius = 18.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gl8qp"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y76yr"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_gl8qp"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gl8qp"]
+radius = 140.03214
+
+[node name="distraction" type="StaticBody2D" unique_id=278985913]
+script = ExtResource("1_oe5wf")
+
+[node name="playerInteraction" type="Area2D" parent="." unique_id=90007122]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="playerInteraction" unique_id=1329944951]
+shape = SubResource("CircleShape2D_y76yr")
+debug_color = Color(0.38221985, 0.5969993, 0.40381995, 0.41960785)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=701461350]
+shape = SubResource("RectangleShape2D_gl8qp")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1179153367]
+sprite_frames = SubResource("SpriteFrames_y76yr")
+
+[node name="tempSprite" type="Sprite2D" parent="." unique_id=1613147401]
+modulate = Color(0.3162489, 0.24704227, 0.57627416, 1)
+scale = Vector2(20, 20)
+texture = SubResource("CanvasTexture_gl8qp")
+
+[node name="alertRadius" type="Area2D" parent="." unique_id=1027390813]
+collision_layer = 8
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="alertRadius" unique_id=52851519]
+shape = SubResource("CircleShape2D_gl8qp")
+debug_color = Color(0.67939895, 0.3933101, 0.8118571, 0.41960785)
