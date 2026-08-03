@@ -8,7 +8,9 @@ extends CharacterBody2D
 @export var speed = 100.0
 const JUMP_VELOCITY = -400.0
 
-
+var alertTimer = 0
+#frames it takes for enemies to notice player
+var maxAlertTime = 30
 
 enum directions {UP,LEFT,DOWN,RIGHT}
 var currentDirection = directions.LEFT
@@ -28,10 +30,34 @@ func _ready() -> void:
 
 func _physics_process(_delta: float) -> void:
 	
+	
+	#hopefully it only grabs the player. Otherwise... uh oh
+	var bodies = player_sensor.get_overlapping_bodies()
+	if(bodies.size()>0):
+		print(alertTimer)
+		en_reaction.frame=0
+		en_reaction.visible=true
+		timer.stop()
+		alertTimer+=1;
+	else:
+		#reduces alert timer over time
+		#removes question mark at 1
+		if(alertTimer>0):
+			alertTimer-=1
+			if alertTimer==1:
+				en_reaction.visible=false
+		
+	if alertTimer>=maxAlertTime && bodies.size()>0:
+		#en_reaction.modulate=Color(0.963, 0.1, 0.821, 1.0)
+		print("I found you!")
+		Global.switchScene("res://scenes/levels/Lose Screen.tscn")
+		#fail level
+		#set global return to this scene
+		#or exit?
+	
+	#state machine for non possession
 	match currentState:
 		states.WANDER:
-			en_reaction.visible=false
-			
 			#change direction on wall hit OR timer timeout :3
 			if velocity!=null && velocity==Vector2(0,0):
 				#choose a random direction
@@ -81,7 +107,11 @@ func _physics_process(_delta: float) -> void:
 			
 			
 			if(abs(global_position)-abs(runTo)<=Vector2(5,5)):
-				currentState=states.IDLE
+				#prob dont go back to idle
+				#hmmmmm. Wait at the palce for a second?
+				#need another state for distracted?
+				#if the player is found on the way, so be it
+				currentState=states.WANDER
 			#run towards alerted place
 			
 		states.POSSESSED:
@@ -128,11 +158,13 @@ func _physics_process(_delta: float) -> void:
 #when possessed, hide player and snap possessed char to player. 
 #also make possessed a different color or something
 
-
-func _on_area_2d_body_entered(body: Node2D) -> void:
-	runTo=body.position
-	currentState=states.ALERT
-	print("Im alert! Running to: " , runTo)
+#dont need this
+func _on_area_2d_body_entered(_body: Node2D) -> void:
+	#runTo=body.position
+	#currentState=states.ALERT
+	#print("Im alert! Running to: " , runTo)
+	##ehhhh im not feeling this alert
+	pass
 
 
 func _on_timer_timeout() -> void:
