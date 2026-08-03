@@ -88,10 +88,10 @@ func _physics_process(delta: float) -> void:
 func possess():
 	animatedSprite.modulate = Color(0.0, 0.0, 0.0, 0.141)
 	#should we disable collision? helps move around walls, but removes ability to be seen by enemies?
-	collision.disabled=true
+	set_collision_layer_value(2,false)
 	
 	
 func unpossess():
 	possessedBody.unpossess()
 	animatedSprite.modulate = Color(1.0, 1.0, 1.0, 1.0)
-	collision.disabled=false
+	set_collision_layer_value(2,true)
