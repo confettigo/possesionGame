@@ -30,7 +30,7 @@ text = "-Possession Game
 -Lucie and Opal
 
 
--How to play: WASD / Arrows to move, space =distract, z=possess
+-How to play: WASD / Arrows to move, space =distract, Z=possess
 "
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1581296057]

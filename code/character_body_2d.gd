@@ -3,6 +3,8 @@ extends CharacterBody2D
 @export var topspeed: float
 @onready var animatedSprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var possession_check: Area2D = $possessionCheck
+@onready var possessAudio: AudioStreamPlayer2D = $possessAudio
+@onready var depossess_audio: AudioStreamPlayer2D = $depossessAudio
 
 @onready var collision: CollisionShape2D = $collision
 
@@ -89,9 +91,10 @@ func possess():
 	animatedSprite.modulate = Color(0.0, 0.0, 0.0, 0.141)
 	#should we disable collision? helps move around walls, but removes ability to be seen by enemies?
 	collision.disabled=true
-	
+	possessAudio.play()
 	
 func unpossess():
 	possessedBody.unpossess()
 	animatedSprite.modulate = Color(1.0, 1.0, 1.0, 1.0)
 	collision.disabled=false
+	depossess_audio.play()

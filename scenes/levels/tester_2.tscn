@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://sytj0e6gkykf" path="res://scenes/entities/playerV1.tscn" id="3_4lf4l"]
 [ext_resource type="PackedScene" uid="uid://bbhgyr7irmxix" path="res://scenes/entities/enemyV1.tscn" id="4_4lf4l"]
 [ext_resource type="PackedScene" uid="uid://kfwgxbt7vsqi" path="res://scenes/entities/distraction.tscn" id="5_2ntrm"]
+[ext_resource type="AudioStream" uid="uid://bnvn40roxc5f8" path="res://audio/backing/16-Bit_Options_Select Your Fighter (loop).wav" id="6_2ef3y"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2ef3y"]
 texture = ExtResource("1_1ub57")
@@ -127,13 +128,19 @@ position = Vector2(231, 367)
 
 [node name="enemy1" parent="." unique_id=1116833427 instance=ExtResource("4_4lf4l")]
 position = Vector2(302, 550)
+collision_layer = 9
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1097386605]
 position = Vector2(576, 328)
 
 [node name="CharacterBody2D" parent="." unique_id=2056990030 instance=ExtResource("4_4lf4l")]
 position = Vector2(758, 353)
+collision_layer = 9
 
 [node name="distraction" parent="." unique_id=278985913 instance=ExtResource("5_2ntrm")]
 position = Vector2(246, 478)
-scale = Vector2(3, 3)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=194772729]
+stream = ExtResource("6_2ef3y")
+volume_db = -5.645
+autoplay = true
