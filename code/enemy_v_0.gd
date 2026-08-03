@@ -2,6 +2,8 @@ extends CharacterBody2D
 @onready var en_reaction: AnimatedSprite2D = $enReaction
 @onready var en_body: AnimatedSprite2D = $EnBody
 
+@onready var player: CharacterBody2D = $"../player"
+
 @onready var player_sensor: Area2D = $playerSensor
 @onready var timer: Timer = $timer
 
@@ -115,8 +117,7 @@ func _physics_process(_delta: float) -> void:
 			#run towards alerted place
 			
 		states.POSSESSED:
-			#the player has control
-			print("Possessed :3")
+			velocity = player.velocity
 		states.STUN:
 			#wait a bit, then switch to wander. Do not check for player while this happens
 			print("Stunned")
@@ -130,21 +131,34 @@ func _physics_process(_delta: float) -> void:
 	#if X is the main axis of movement
 	if(abs(velocity.x) > abs(velocity.y)):
 		if velocity.x>0:
-			en_body.play("moveRight")
+			
+			if currentState==states.POSSESSED:
+				en_body.play("moveRightP")
+			else:
+				en_body.play("moveRight")
 			player_sensor.set_rotation_degrees(180)
 			currentDirection=directions.RIGHT
 		else:
-			en_body.play("moveLeft")
+			if currentState==states.POSSESSED:
+				en_body.play("moveLeftP")
+			else:
+				en_body.play("moveLeft")
 			player_sensor.set_rotation_degrees(0)
 			currentDirection=directions.LEFT
 	#if Y is the main axis of movement
 	else:
 		if velocity.y<0:
-			en_body.play("moveUp")
+			if currentState==states.POSSESSED:
+				en_body.play("moveUpP")
+			else:
+				en_body.play("moveUp")
 			player_sensor.set_rotation_degrees(90)
 			currentDirection=directions.UP
 		else:
-			en_body.play("moveDown")
+			if currentState==states.POSSESSED:
+				en_body.play("moveDownP")
+			else:
+				en_body.play("moveDown")
 			player_sensor.set_rotation_degrees(270)
 			currentDirection=directions.DOWN
 	
@@ -175,3 +189,11 @@ func _on_timer_timeout() -> void:
 func setAlert(V: Vector2):
 	runTo = V
 	currentState=states.ALERT
+	
+func possess():
+	currentState=states.POSSESSED
+	print("I got got")
+	
+func unpossess():
+	currentState=states.WANDER
+	print("Noooooo im normal again :( I was really into it")

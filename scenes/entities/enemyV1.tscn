@@ -186,7 +186,7 @@ animations = [{
 size = Vector2(27, 45)
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=1116833427]
-collision_layer = 9
+collision_layer = 25
 script = ExtResource("1_lk8wk")
 
 [node name="enReaction" type="AnimatedSprite2D" parent="." unique_id=213479092]
@@ -195,7 +195,7 @@ sprite_frames = SubResource("SpriteFrames_gl8qp")
 
 [node name="EnBody" type="AnimatedSprite2D" parent="." unique_id=837862953]
 sprite_frames = SubResource("SpriteFrames_8o4vd")
-animation = &"moveDown"
+animation = &"moveUpP"
 autoplay = "moveLeft"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=216262431]

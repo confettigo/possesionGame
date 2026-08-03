@@ -18,11 +18,14 @@ offset_left = -559.0
 offset_top = -299.0
 offset_right = 554.0
 offset_bottom = 303.0
-theme_override_font_sizes/font_size = 58
+theme_override_font_sizes/font_size = 36
 text = "-Possession Game
 -its kinda like ghostbusters
 
 -Lucie and Opal
+
+
+-How to play: WASD / Arrows to move, space =distract, z=possess
 "
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1581296057]

@@ -12,7 +12,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	
 	
-	if(Input.is_action_just_released("in_space")):
+	if(Input.is_action_just_released("shove")):
 		if player_interaction.get_overlapping_bodies().size()>=1:
 			callEnemies()
 	
