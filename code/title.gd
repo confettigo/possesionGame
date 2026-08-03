@@ -13,4 +13,12 @@ func _on_lvl_3_button_up() -> void:
 
 
 func _on_lvl_4_button_up() -> void:
+	Global.switchScene("res://scenes/levels/v_2_lvl_4_pt_1.tscn")
+
+
+func _on_lvl_5_button_up() -> void:
 	Global.switchScene("res://scenes/levels/v_2_lvl_4.tscn")
+
+
+func _on_lvl_6_button_up() -> void:
+	Global.switchScene("res://scenes/levels/v_2_lvl_6.tscn")

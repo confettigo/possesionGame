@@ -105,3 +105,5 @@ text = "Level 6"
 [connection signal="button_up" from="lvl2" to="." method="_on_lvl_2_button_up"]
 [connection signal="button_up" from="lvl3" to="." method="_on_lvl_3_button_up"]
 [connection signal="button_up" from="lvl4" to="." method="_on_lvl_4_button_up"]
+[connection signal="button_up" from="lvl5" to="." method="_on_lvl_5_button_up"]
+[connection signal="button_up" from="lvl6" to="." method="_on_lvl_6_button_up"]
